@@ -4,9 +4,17 @@ import "../styles/global.css";
 
 <nav class="nav">
   <ul class="flex gap-4">
-    <li><a href="#">Inicio</a></li>
+    <li><a href="/">Inicio</a></li>
     <li><a href="#">Productos</a></li>
-    <li><a href="#"></a>Ventas Hoy</li>
-    <li><a href="#"></a>Ventas Del Mes</li>
+    <li><a href="#">Ventas Hoy</a></li>
+    <li><a href="#">Ventas Del Mes</a></li>
   </ul>
 </nav>
+
+<style>
+  @reference "tailwindcss";
+
+  a {
+    @apply text-white hover:font-bold hover:text-pink-800 hover:underline;
+  }
+</style>

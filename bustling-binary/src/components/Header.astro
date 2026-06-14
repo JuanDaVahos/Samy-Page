@@ -1,9 +1,13 @@
 ---
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
+import { Image } from "astro:assets";
+import logoSamy from "../assets/LogoSAMY-sinfondo.webp";
 ---
 
 <header class="flex w-full justify-around items-center bg-pink-400">
-  <h1 class="text-3xl text-white font-bold">S A M Y</h1>
+  <a href=""
+    ><Image src={logoSamy} alt="Logo de SAMY" width={42} height={42} /></a
+  >
   <Nav />
 </header>
