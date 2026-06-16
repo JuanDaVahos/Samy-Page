@@ -3,11 +3,19 @@ import "../styles/global.css";
 import Nav from "../components/Nav.astro";
 import { Image } from "astro:assets";
 import logoSamy from "../assets/LogoSAMY-sinfondo.webp";
+import MenuClose from "../assets/svg/MenuClose.svg";
 ---
 
-<header class="flex w-full justify-around items-center bg-pink-400">
-  <a href=""
+<header
+  class="flex w-full justify-around items-center bg-pink-400 max-[720px]:justify-between"
+>
+  <a href="/" class="ml-2.5"
     ><Image src={logoSamy} alt="Logo de SAMY" width={42} height={42} /></a
   >
   <Nav />
+  <a href=""
+    ><MenuClose
+      class="text-white hover:text-pink-800 hidden max-[720px]:block mr-2.5"
+    />
+  </a>
 </header>
