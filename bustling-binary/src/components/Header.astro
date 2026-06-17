@@ -4,18 +4,47 @@ import Nav from "../components/Nav.astro";
 import { Image } from "astro:assets";
 import logoSamy from "../assets/LogoSAMY-sinfondo.webp";
 import MenuClose from "../assets/svg/MenuClose.svg";
+import MenuOpen from "../assets/svg/MenuOpen.svg";
 ---
 
 <header
   class="flex w-full justify-around items-center bg-pink-400 max-[720px]:justify-between"
 >
-  <a href="/" class="ml-2.5"
-    ><Image src={logoSamy} alt="Logo de SAMY" width={42} height={42} /></a
-  >
-  <Nav />
-  <a href=""
-    ><MenuClose
-      class="text-white hover:text-pink-800 hidden max-[720px]:block mr-2.5"
-    />
+  <a href="/" class="ml-2.5">
+    <Image src={logoSamy} alt="Logo de SAMY" width={42} height={42} />
   </a>
+  <div class="menu-container">
+    <MenuClose
+      class="MenuSvg text-white hover:text-pink-800 hidden max-[720px]:block mr-2.5"
+    />
+    <input type="checkbox" class="input-menu hidden" />
+  </div>
+  <Nav />
 </header>
+
+<script>
+  //recupero el div (según yo es lo mejor)
+  const menuContainer = document.querySelector(".menu-container");
+  const inputMenu = document.querySelector(".input-menu") as HTMLInputElement;
+  const nav = document.querySelector("nav") as HTMLElement;
+  const MenuSvg = document.querySelector(".MenuSvg") as HTMLElement;
+
+  //si el div existe, y se le da click =>
+  menuContainer?.addEventListener("click", () => {
+    //si existe el input se le cambia el estado en el que se encuente
+    if (inputMenu) {
+      inputMenu.checked = !inputMenu.checked;
+    }
+
+    if (inputMenu.checked) {
+      nav.style.display = "block";
+      MenuSvg.remove();
+    }
+
+    if (!inputMenu.checked) {
+      nav.style.display = "none";
+
+      menuContainer.innerHTML = `<MenuOpen class="MenuSvg text-white hover:text-pink-800 hidden max-[720px]:block mr-2.5" />`;
+    }
+  });
+</script>

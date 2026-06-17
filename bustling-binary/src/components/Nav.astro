@@ -2,19 +2,58 @@
 import "../styles/global.css";
 ---
 
-<nav class="hidden min-[720px]:block">
+<nav class="hidden max-[720px]:block">
   <ul class="flex gap-4">
-    <li><a href="/">Inicio</a></li>
-    <li><a href="#">Productos</a></li>
-    <li><a href="#">Ventas Hoy</a></li>
-    <li><a href="#">Ventas Del Mes</a></li>
+    <li>
+      <a
+        href="/"
+        class="text-white hover:font-bold hover:text-pink-800 hover:underline;"
+        >Inicio</a
+      >
+    </li>
+    <li>
+      <a
+        href="#"
+        class="text-white hover:font-bold hover:text-pink-800 hover:underline;"
+        >Productos</a
+      >
+    </li>
+    <li>
+      <a
+        href="#"
+        class="text-white hover:font-bold hover:text-pink-800 hover:underline;"
+        >Ventas Hoy</a
+      >
+    </li>
+    <li>
+      <a
+        href="#"
+        class="text-white hover:font-bold hover:text-pink-800 hover:underline;"
+        >Ventas Del Mes</a
+      >
+    </li>
   </ul>
 </nav>
 
-<style>
+<style is:global>
   @reference "tailwindcss";
 
-  a {
-    @apply text-white hover:font-bold hover:text-pink-800 hover:underline;
+  @media (max-width: 720px) {
+    nav {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background-color: pink;
+      z-index: 10;
+      display: none;
+    }
+
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
   }
 </style>
