@@ -2,7 +2,7 @@
 import "../styles/global.css";
 ---
 
-<nav class="hidden max-[720px]:block">
+<nav class="hidden min-[720px]:block">
   <ul class="flex gap-4">
     <li>
       <a
@@ -44,14 +44,17 @@ import "../styles/global.css";
       top: 50px;
       left: 0;
       width: 100%;
-      background-color: pink;
       z-index: 10;
       display: none;
+      background: var(--color-samy);
     }
 
     nav ul {
       display: flex;
+      text-align: center;
       flex-direction: column;
+      border-top: solid #39393980 1px;
+      border-bottom: solid black 1px;
       gap: 1rem;
       padding: 1rem;
     }

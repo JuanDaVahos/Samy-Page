@@ -8,14 +8,17 @@ import MenuOpen from "../assets/svg/MenuOpen.svg";
 ---
 
 <header
-  class="flex w-full justify-around items-center bg-pink-400 max-[720px]:justify-between"
+  class="flex w-full justify-around items-center bg-samy max-[720px]:justify-between border-b-2 border-b-[#39393980]"
 >
   <a href="/" class="ml-2.5">
     <Image src={logoSamy} alt="Logo de SAMY" width={42} height={42} />
   </a>
   <div class="menu-container">
     <MenuClose
-      class="MenuSvg text-white hover:text-pink-800 hidden max-[720px]:block mr-2.5"
+      class="MenuCloseSvg text-white hover:text-pink-800 min-[720px]:hidden mr-2.5"
+    />
+    <MenuOpen
+      class="MenuOpenSvg text-white hover:text-pink-800 hidden min-[720px]:hidden mr-2.5"
     />
     <input type="checkbox" class="input-menu hidden" />
   </div>
@@ -27,7 +30,8 @@ import MenuOpen from "../assets/svg/MenuOpen.svg";
   const menuContainer = document.querySelector(".menu-container");
   const inputMenu = document.querySelector(".input-menu") as HTMLInputElement;
   const nav = document.querySelector("nav") as HTMLElement;
-  const MenuSvg = document.querySelector(".MenuSvg") as HTMLElement;
+  const MenuCloseSvg = document.querySelector(".MenuCloseSvg") as HTMLElement;
+  const MenuOpenSvg = document.querySelector(".MenuOpenSvg") as HTMLElement;
 
   //si el div existe, y se le da click =>
   menuContainer?.addEventListener("click", () => {
@@ -38,13 +42,14 @@ import MenuOpen from "../assets/svg/MenuOpen.svg";
 
     if (inputMenu.checked) {
       nav.style.display = "block";
-      MenuSvg.remove();
+      MenuCloseSvg.classList.add("hidden");
+      MenuOpenSvg.classList.remove("hidden");
     }
 
     if (!inputMenu.checked) {
       nav.style.display = "none";
-
-      menuContainer.innerHTML = `<MenuOpen class="MenuSvg text-white hover:text-pink-800 hidden max-[720px]:block mr-2.5" />`;
+      MenuCloseSvg.classList.remove("hidden");
+      MenuOpenSvg.classList.add("hidden");
     }
   });
 </script>
