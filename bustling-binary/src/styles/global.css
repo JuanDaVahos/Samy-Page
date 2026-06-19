@@ -28,8 +28,8 @@
     padding: 1rem;
   }
 
-  /* ajustar despues, esto no debe quedar así */
-  main {
-    display: none;
+  .BienvenidoHero {
+    flex-direction: column;
+    text-align: center;
   }
 }

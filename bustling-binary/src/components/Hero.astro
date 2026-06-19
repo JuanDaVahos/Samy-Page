@@ -1,37 +1,126 @@
 ---
 import ImgWelcome from "../../public/imgWelcome.webp";
 import Image from "astro/components/Image.astro";
+import CalendarySvg from "../assets/svg/Calendary.svg";
+import ClockSvg from "../assets/svg/Clock.svg";
+import MoneySvg from "../assets/svg/Money.svg";
+import ShopSvg from "../assets/svg/Shop.svg";
+import WalletSvg from "../assets/svg/Wallet.svg";
+import UpSvg from "../assets/svg/Up.svg";
 
+// FECHA
 const fechaHoy = new Date();
+const fechaCortaCo = fechaHoy.toLocaleDateString("es-CO", {
+  day: "numeric",
+  month: "numeric",
+  year: "numeric",
+});
 
-const fechaCortaCo = fechaHoy.toLocaleDateString("es-CO");
+// HORA
+const horaMedellin = new Date().toLocaleTimeString("es-CO", {
+  hour: "2-digit",
+  minute: "2-digit",
+});
 ---
 
-<main class="p-5">
-  <div class="BienvenidoHero flex items-center">
-    <Image
-      src={ImgWelcome}
-      alt="Imagen de Bienvenida, Un helado Alegre"
-      width={250}
-      height={250}
-      class="m-[30px]"
-    />
-    <div class="containerBienvenido">
-      <h1 class="text-6xl text-black [text-shadow:_0px_0px_2px_#ff00ae]">
-        ¡Bienvenido! 🍦
+<main class="flex flex-col p-5 gap-2 md:gap-8">
+  <section
+    class="mx-auto flex w-full max-w-6xl flex-col items-center gap-8 rounded-3xl border border-pink-200 bg-white/60 p-8 shadow-sm backdrop-blur-sm md:flex-row md:justify-center"
+  >
+    <!-- Imagen -->
+    <div class="flex justify-center">
+      <Image
+        src={ImgWelcome}
+        alt="Imagen de Bienvenida, Un helado Alegre"
+        width={250}
+        height={250}
+        class="drop-shadow-lg"
+      />
+    </div>
+
+    <!-- Información -->
+    <div class="flex flex-col items-center md:items-start">
+      <h1
+        class="flex items-center gap-3 text-center text-5xl font-bold text-black"
+      >
+        <span>¡Bienvenido!</span>
+        <span>🍦</span>
       </h1>
-      <p>Aquí tienes el resumen general de la Heladeria</p>
+
+      <p class="mt-2 text-center text-lg text-gray-700 md:text-left">
+        Aquí tienes el resumen general de la Heladería
+      </p>
+
+      <!-- Fecha y Hora -->
+      <div
+        class="mt-8 flex flex-wrap items-center justify-center gap-6 md:justify-start"
+      >
+        <div
+          class="flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-sm"
+        >
+          <CalendarySvg class="h-8 w-8" />
+
+          <div>
+            <p class="text-sm text-gray-500">Fecha</p>
+            <strong class="text-samy">{fechaCortaCo}</strong>
+          </div>
+        </div>
+
+        <div
+          class="flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-sm"
+        >
+          <ClockSvg class="h-8 w-8" />
+
+          <div>
+            <p class="text-sm text-gray-500">Hora</p>
+            <strong class="text-samy">{horaMedellin}</strong>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="fechaDiv">
-      <p>Fecha</p>
-      <strong class="text-samy">{fechaCortaCo}</strong>
-    </div>
-  </div>
-  <div class="IngresosHoy"></div>
-  <div class="VentasHoy"></div>
-  <div class="GastosHoy"></div>
-  <div class="GanaciasHoy"></div>
-  <div class="EntradasSalidas"></div>
-  <div class="top5Vendidos"></div>
-  <div class="ResumenMes"></div>
+  </section>
+
+  <section
+    class="Resumen mx-auto w-full flex max-w-6xl gap-8 flex-col items-center rounded-3xl border border-pink-200 bg-white/60 p-8 shadow-sm backdrop-blur-sm md:flex-row md:justify-between"
+  >
+    <section
+      class="IngresosHoy bg-white rounded-xl shadow-sm p-2 flex justify-center items-center gap-1 md:gap-2"
+    >
+      <MoneySvg class="rounded-full p-2 bg-green-600 text-black w-16 h-16" />
+      <div>
+        <h3 class="font-bold">Ingresos Hoy</h3>
+        <span>$99,999</span>
+      </div>
+    </section>
+    <section
+      class="VentasHoy IngresosHoy bg-white rounded-xl shadow-sm p-2 flex justify-center items-center gap-1 md:gap-2"
+    >
+      <ShopSvg class="rounded-full p-2 bg-indigo-500 text-black w-16 h-16" />
+      <div>
+        <h3 class="font-bold">Ventas Hoy</h3>
+        <span>156</span>
+      </div>
+    </section>
+    <section
+      class="GastosHoy IngresosHoy bg-white rounded-xl shadow-sm p-2 flex justify-center items-center gap-1 md:gap-2"
+    >
+      <WalletSvg class="rounded-full p-2 bg-pink-500 text-black w-16 h-16" />
+      <div>
+        <h3 class="font-bold">Gastos Hoy</h3>
+        <span>$99,999</span>
+      </div>
+    </section>
+    <section
+      class="GanaciasHoy IngresosHoy bg-white rounded-xl shadow-sm p-2 flex justify-center items-center gap-1 md:gap-2"
+    >
+      <UpSvg class="rounded-full p-2 bg-orange-500 text-black w-16 h-16" />
+      <div>
+        <h3 class="font-bold">Ganancias Hoy</h3>
+        <span>$00,000</span>
+      </div>
+    </section>
+  </section>
+  <section class="EntradasSalidas"></section>
+  <section class="top5Vendidos"></section>
+  <section class="ResumenMes"></section>
 </main>
