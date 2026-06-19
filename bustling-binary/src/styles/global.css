@@ -1,5 +1,35 @@
 @import "tailwindcss";
+@reference "tailwindcss";
 
 @theme {
   --color-samy: #fb64b6;
+  --color-hover-samy: #e51d7a;
+}
+
+@media (max-width: 720px) {
+  nav {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: none;
+    background: var(--color-samy);
+    text-align: center;
+  }
+
+  nav ul {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    border-top: solid #39393980 1px;
+    border-bottom: solid black 1px;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  /* ajustar despues, esto no debe quedar así */
+  main {
+    display: none;
+  }
 }

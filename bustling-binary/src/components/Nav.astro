@@ -1,62 +1,34 @@
 ---
 import "../styles/global.css";
+import HomeSvg from "../assets/svg/Home.svg";
+import ConeSvg from "../assets/svg/Cone.svg";
+import GraphicSvg from "../assets/svg/Graphic.svg";
+import CalendarySvg from "../assets/svg/Calendary.svg";
 ---
 
 <nav class="hidden min-[720px]:block">
   <ul class="flex gap-4">
-    <li>
-      <a
-        href="/"
-        class="text-white hover:font-bold hover:text-pink-800 hover:underline;"
-        >Inicio</a
+    <li class="hover:bg-hover-samy rounded-2xl p-1.5">
+      <a href="/" class="flex items-center gap-2 text-white">
+        <HomeSvg class="w-5 h-5" />
+        Inicio
+      </a>
+    </li>
+    <li class="hover:bg-hover-samy rounded-2xl p-1.5">
+      <a href="#" class="flex items-center gap-2 text-white ;">
+        <ConeSvg class="w-5 h-5" />
+        Productos</a
       >
     </li>
-    <li>
-      <a
-        href="#"
-        class="text-white hover:font-bold hover:text-pink-800 hover:underline;"
-        >Productos</a
-      >
+    <li class="hover:bg-hover-samy rounded-2xl p-1.5">
+      <a href="#" class="flex items-center gap-2 text-white ;">
+        <GraphicSvg class="w-5 h-5" /> Ventas Hoy
+      </a>
     </li>
-    <li>
-      <a
-        href="#"
-        class="text-white hover:font-bold hover:text-pink-800 hover:underline;"
-        >Ventas Hoy</a
-      >
-    </li>
-    <li>
-      <a
-        href="#"
-        class="text-white hover:font-bold hover:text-pink-800 hover:underline;"
-        >Ventas Del Mes</a
-      >
+    <li class="hover:bg-hover-samy rounded-2xl p-1.5">
+      <a href="#" class="flex items-center gap-2 text-white ;">
+        <CalendarySvg class="w-5 h-5" /> Ventas Del Mes
+      </a>
     </li>
   </ul>
 </nav>
-
-<style is:global>
-  @reference "tailwindcss";
-
-  @media (max-width: 720px) {
-    nav {
-      position: absolute;
-      top: 50px;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-      display: none;
-      background: var(--color-samy);
-    }
-
-    nav ul {
-      display: flex;
-      text-align: center;
-      flex-direction: column;
-      border-top: solid #39393980 1px;
-      border-bottom: solid black 1px;
-      gap: 1rem;
-      padding: 1rem;
-    }
-  }
-</style>
