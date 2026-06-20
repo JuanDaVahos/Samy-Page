@@ -23,9 +23,9 @@ const horaMedellin = new Date().toLocaleTimeString("es-CO", {
 });
 ---
 
-<main class="flex flex-col p-5 gap-2 md:gap-8">
+<main class="flex flex-col gap-2 md:gap-8">
   <section
-    class="mx-auto flex w-full max-w-6xl flex-col items-center gap-8 rounded-3xl border border-pink-200 bg-white/60 p-8 shadow-sm backdrop-blur-sm md:flex-row md:justify-center"
+    class="w-[90%] mt-4 mx-auto flex md:w-full max-w-6xl flex-col items-center gap-8 rounded-3xl border border-pink-200 bg-white/60 p-8 shadow-sm backdrop-blur-sm md:flex-row md:justify-center"
   >
     <!-- Imagen -->
     <div class="flex justify-center">
@@ -81,46 +81,54 @@ const horaMedellin = new Date().toLocaleTimeString("es-CO", {
   </section>
 
   <section
-    class="Resumen mx-auto w-full flex max-w-6xl gap-8 flex-col items-center rounded-3xl border border-pink-200 bg-white/60 p-8 shadow-sm backdrop-blur-sm md:flex-row md:justify-between"
+    class="w-[90%] mt-4 mx-auto flex md:w-full max-w-6xl flex-col items-center gap-8 rounded-3xl border border-pink-200 bg-white/60 p-8 shadow-sm backdrop-blur-sm md:flex-row md:justify-center"
   >
-    <section
-      class="IngresosHoy bg-white rounded-xl shadow-sm p-2 flex justify-center items-center gap-1 md:gap-2"
+    <article
+      class="bg-white rounded-xl shadow-sm p-2 flex items-center gap-1 md:gap-2 w-[80%] justify-around"
     >
       <MoneySvg class="rounded-full p-2 bg-green-600 text-black w-16 h-16" />
       <div>
         <h3 class="font-bold">Ingresos Hoy</h3>
         <span>$99,999</span>
       </div>
-    </section>
-    <section
-      class="VentasHoy IngresosHoy bg-white rounded-xl shadow-sm p-2 flex justify-center items-center gap-1 md:gap-2"
+    </article>
+    <article
+      class="bg-white rounded-xl shadow-sm p-2 flex items-center gap-1 md:gap-2 w-[80%] justify-around"
     >
       <ShopSvg class="rounded-full p-2 bg-indigo-500 text-black w-16 h-16" />
       <div>
         <h3 class="font-bold">Ventas Hoy</h3>
         <span>156</span>
       </div>
-    </section>
-    <section
-      class="GastosHoy IngresosHoy bg-white rounded-xl shadow-sm p-2 flex justify-center items-center gap-1 md:gap-2"
+    </article>
+    <article
+      class="bg-white rounded-xl shadow-sm p-2 flex items-center gap-1 md:gap-2 w-[80%] justify-around"
     >
       <WalletSvg class="rounded-full p-2 bg-pink-500 text-black w-16 h-16" />
       <div>
         <h3 class="font-bold">Gastos Hoy</h3>
         <span>$99,999</span>
       </div>
-    </section>
-    <section
-      class="GanaciasHoy IngresosHoy bg-white rounded-xl shadow-sm p-2 flex justify-center items-center gap-1 md:gap-2"
+    </article>
+    <article
+      class="bg-white rounded-xl shadow-sm p-2 flex items-center gap-1 md:gap-2 w-[80%] justify-around"
     >
       <UpSvg class="rounded-full p-2 bg-orange-500 text-black w-16 h-16" />
       <div>
         <h3 class="font-bold">Ganancias Hoy</h3>
         <span>$00,000</span>
       </div>
-    </section>
+    </article>
   </section>
-  <section class="EntradasSalidas"></section>
-  <section class="top5Vendidos"></section>
+  <div class="towCol flex flex-col items-center">
+    <section
+      class="w-[90%] mt-4 mx-auto flex md:w-full max-w-6xl flex-col items-center gap-8 rounded-3xl border border-pink-200 bg-white/60 p-8 shadow-sm backdrop-blur-sm md:flex-row md:justify-center"
+    >
+    </section>
+    <section
+      class="w-[90%] mt-4 mx-auto flex md:w-full max-w-6xl flex-col items-center gap-8 rounded-3xl border border-pink-200 bg-white/60 p-8 shadow-sm backdrop-blur-sm md:flex-row md:justify-center"
+    >
+    </section>
+  </div>
   <section class="ResumenMes"></section>
 </main>
