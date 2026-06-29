@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import logoSamy from "../assets/LogoSAMY-sinfondo.webp";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="w-full mt-12 bg-white/60 border-t border-pink-200 backdrop-blur-sm shadow-sm py-8 px-6 flex flex-col items-center gap-6"
+>
+  <div class="flex flex-col items-center gap-4">
+    <a href="/" class="flex items-center gap-3 group">
+      <Image
+        src={logoSamy}
+        alt="Logo de SAMY"
+        width={48}
+        height={48}
+        class="transition-transform duration-300 group-hover:scale-110 drop-shadow-md"
+      />
+      <span
+        class="text-2xl font-extrabold text-black trakicng-tight group-hover:text-samy transition-colors"
+      >
+        SAMY
+      </span>
+    </a>
+  </div>
+
+  <div
+    class="w-full max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-pink-200 to-transparent"
+  >
+  </div>
+
+  <!-- Fila inferior: Copyright & Créditos -->
+  <div
+    class="w-full max-w-2xl flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500"
+  >
+    <p>
+      &copy; {currentYear} SAMY Administrador. Todos los derechos reservados.
+    </p>
+    <p class="flex items-center gap-1">
+      <span>Creado con</span>
+      <span class="text-pink-500 animate-pulse">❤️</span>
+      <span>y</span>
+      <span class="hover:scale-125 transition-transform cursor-pointer">🍦</span
+      >
+    </p>
+  </div>
+</footer>
